@@ -1,0 +1,92 @@
+[
+  {
+    "_id": 1,
+    "title": "Little League Web Application",
+    "owner": "Team",
+    "type": "Web App",
+    "stack": "Node.js, Express, MySQL, Bootstrap",
+    "desc": "A full-stack web application made to display live data for little league baseball games, including scores, standings, and player stats.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 2,
+    "title": "Redeveloping malloc in C",
+    "owner": "Dylan",
+    "type": "Systems",
+    "stack": "C, GDB, Valgrind",
+    "desc": "Low-level programming project reimplementing dynamic memory allocation from scratch, allowing for deep understanding of heap memory and pointer arithmetic.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 3,
+    "title": "HVAC Inventory Web Application",
+    "owner": "Fabrizio",
+    "type": "Web App",
+    "stack": "HTML, CSS, JavaScript, Bootstrap",
+    "desc": "A web application designed to allow for accurate inventory tracking and shipment analysis for an HVAC company.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 4,
+    "title": "DevPortfolio Hub",
+    "owner": "Team",
+    "type": "Web App",
+    "stack": "Node.js, Express, HTML, CSS, Bootstrap, JavaScript",
+    "desc": "This very portfolio website — a multi-page static site served via Node.js Express with REST API endpoints for dynamic project data.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 5,
+    "title": "Shell Interpreter in C",
+    "owner": "Dylan",
+    "type": "Systems",
+    "stack": "C, POSIX, Linux",
+    "desc": "A Unix-like shell interpreter supporting piping, I/O redirection, background processes, and built-in commands like cd and exit.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 6,
+    "title": "Student Grade Tracker",
+    "owner": "Fabrizio",
+    "type": "Web App",
+    "stack": "React, Node.js, Express, MongoDB",
+    "desc": "A responsive web app that allows professors to manage student grades, generate reports, and track semester performance trends.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 7,
+    "title": "Sorting Algorithm Visualizer",
+    "owner": "Team",
+    "type": "Web App",
+    "stack": "HTML, CSS, JavaScript",
+    "desc": "An interactive browser-based tool that animates bubble sort, merge sort, quicksort, and insertion sort with adjustable speed and array size.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 8,
+    "title": "Sentiment Analysis CLI Tool",
+    "owner": "Fabrizio",
+    "type": "Data/AI",
+    "stack": "Python, NLTK, scikit-learn",
+    "desc": "A command-line tool that uses natural language processing to classify the sentiment of text input as positive, negative, or neutral.",
+    "img": "",
+    "repo": "https://github.com"
+  },
+  {
+    "_id": 9,
+    "title": "Multithreaded Web Crawler",
+    "owner": "Dylan",
+    "type": "Systems",
+    "stack": "Java, Jsoup, ExecutorService",
+    "desc": "A concurrent web crawler built in Java that traverses web pages, extracts links, and indexes content using a thread pool for performance.",
+    "img": "",
+    "repo": "https://github.com"
+  }
+]
