@@ -1,0 +1,13 @@
+
+{
+    "name": "devportfolio-hub",
+    "version": "1.0.0",
+    "description": "CS 456 Assignment #3 – Node.js Express Static Server + REST GET",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+}
