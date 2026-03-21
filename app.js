@@ -4,10 +4,10 @@
 const express = require('express');
 const path = require('path');
  
-//const projectCtrl = require('./controller/ProjectController');
+const projectCtrl = require('./controller/ProjectController');
  
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000; 
  
 //  mid ware
 app.use(express.json());
@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public_html')));
  
 // rest api
-//app.get('/api/projects',     projectCtrl.getAll);
-//app.get('/api/projects/:id', projectCtrl.getOne);
+app.get('/api/projects',     projectCtrl.getAll);
+app.get('/api/projects/:id', projectCtrl.getOne);
  
 // start server
 app.listen(PORT, () => {
