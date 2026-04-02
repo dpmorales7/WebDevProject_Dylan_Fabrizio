@@ -19,6 +19,10 @@ app.use(express.static(path.join(__dirname, 'public_html')));
 // rest api
 app.get('/api/projects',     projectCtrl.getAll);
 app.get('/api/projects/:id', projectCtrl.getOne);
+app.post('/api/projects',    projectCtrl.create);
+app.put('/api/projects/:id', projectCtrl.update);
+app.delete('/api/projects/:id', projectCtrl.delete);
+
  
 // start server
 app.listen(PORT, () => {

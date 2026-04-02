@@ -1,4 +1,4 @@
-/ ProjectDaoJson.js
+// ProjectDaoJson.js
 // Dao for projects
  
 const fs = require('fs');

@@ -29,6 +29,7 @@
  
     #loading-spinner { display: flex; justify-content: center; padding: 3rem; }
     #error-msg       { display: none; }
+    .action-buttons { white-space: nowrap; }
   </style>
 </head>
  
@@ -123,6 +124,7 @@
             <th>Tech Stack</th>
             <th>Description</th>
             <th>Repo</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody id="tbody_projects">
@@ -201,6 +203,13 @@
       const repoLink = p.repo
         ? `<a href="${p.repo}" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>`
         : '<span class="text-muted">—</span>';
+
+      const actionButtons = `
+        <div class="action-buttons d-flex flex-column flex-sm-row gap-2">
+          <a href="index.html?edit=${p._id}#addProject" class="btn btn-outline-secondary btn-sm">Edit</a>
+          <button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteProject(${p._id})">Delete</button>
+        </div>
+      `;
  
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -211,6 +220,7 @@
         <td>${stackPills}</td>
         <td>${p.desc}</td>
         <td>${repoLink}</td>
+        <td>${actionButtons}</td>
       `;
       tbody.appendChild(tr);
     });
@@ -246,6 +256,31 @@
     });
  
     renderTable(filtered);
+  }
+
+  async function deleteProject(projectId) {
+    if (!window.confirm('Delete this project from the server?')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/projects/${projectId}`, {
+        method: 'DELETE'
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server responded with status ${response.status}`);
+      }
+
+      allProjects = allProjects.filter(function (p) {
+        return p._id !== projectId;
+      });
+
+      filterTable();
+    } catch (err) {
+      console.error('Failed to delete project:', err);
+      window.alert('Could not delete the project from the server.');
+    }
   }
  
   // a init
