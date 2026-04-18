@@ -204,16 +204,17 @@
         ? `<a href="${p.repo}" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>`
         : '<span class="text-muted">—</span>';
 
+      // FIX: wrap p._id in single quotes so the MongoDB string ID is valid JS
       const actionButtons = `
         <div class="action-buttons d-flex flex-column flex-sm-row gap-2">
-          <a href="index.html?edit=${p._id}#addProject" class="btn btn-outline-secondary btn-sm">Edit</a>
-          <button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteProject(${p._id})">Delete</button>
+          <a href="editproject.html?id=${p._id}" class="btn btn-outline-secondary btn-sm">Edit</a>
+          <button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteProject('${p._id}')">Delete</button>
         </div>
       `;
  
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td class="text-muted">${p._id}</td>
+        <td class="text-muted">${index + 1}</td>
         <td class="fw-semibold">${p.title}</td>
         <td>${p.owner}</td>
         <td><span class="badge ${badgeClass}">${p.type}</span></td>
@@ -272,8 +273,9 @@
         throw new Error(`Server responded with status ${response.status}`);
       }
 
+      // FIX: compare as strings since MongoDB _id is a string
       allProjects = allProjects.filter(function (p) {
-        return p._id !== projectId;
+        return p._id.toString() !== projectId;
       });
 
       filterTable();
@@ -283,7 +285,7 @@
     }
   }
  
-  // a init
+  // init
   loadProjects();
  
 </script>
